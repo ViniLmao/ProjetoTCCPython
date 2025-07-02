@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Produto</title>
+    <link rel="stylesheet" href="{% static 'produtos/css/ver_produtos.css' %}">
+</head>
+<body>
+    <h1>
+        Ver Produtos
+    </h1>
+        <p>
+            Cadastrar Produtos
+        </p>
+        <form action="{% url 'ver_produto'%}" method="POST">{% csrf_token %}
+            <input type="text" name="nome" placeholder="digite o nome do produto">
+            <br>
+            <input type="number" name="quantidade" placeholder="digite a quantidade">
+            <br>
+            <input type="submit" value="Cadastrar">
+        </form>
+</body>
+</html>
